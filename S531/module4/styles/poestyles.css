@@ -1,0 +1,33 @@
+body {
+max-width: 60em;
+margin: 0 auto 0 auto;
+background-image: url(../images/eye.png), url(../images/poe-portrait.png);
+/*I know that only one image is required, but I really wanted to put in two.*/
+background-repeat: no-repeat;
+background-position: top right, bottom left;
+background-size: 400px;
+background-attachment: fixed;
+background-color: #E8D8BD;
+}
+
+h1, h2, p, table, li, ul, caption, a {
+    background-color: rgba(252, 245, 229, 0.9);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+
+    /*Here there are two additional styles I used for the text.*/
+
+h1 {
+    text-decoration: underline;
+}
+ 
+/*And this is the final additional style.  */                                               
+
+
+
+table, th, td {
+border-collapse: collapse;
+border: 1px solid #000;
+padding: 1em;
+}
