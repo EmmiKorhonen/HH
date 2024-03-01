@@ -45,7 +45,7 @@ body {
 }
 
 .video-info a:hover {
-    background-color: #7DB291; /* Voit vaihtaa tämän haluamaksesi väriksi */
+    background-color: #7DB291;
 }
 
 header, nav, main, aside, footer {
@@ -55,7 +55,7 @@ header, nav, main, aside, footer {
 
 header {
     grid-area: header;
-    background-color:/*#02B398;*/#02C39A;
+    background-color: #02C39A;
     padding: 10px;
 }
 
@@ -80,19 +80,19 @@ nav ul li a:hover {
 
 main {
     grid-area: main;
-    background-color:/* #02A295;*/ #02B398;
+    background-color: #02B398;
     padding: 10px; /* Lisää tilaa reunojen väliin */
 }
 
 aside {
     grid-area: aside;
-    background-color: /*#02C39A; */#79DBAC;
+    background-color: #79DBAC;
     padding: 10px;
 }
 
 footer {
     grid-area: footer;
-    background-color: #02A096;/*#029894; #02A295;*/
+    background-color: #02A096;
     padding: 5px;
 }
 
