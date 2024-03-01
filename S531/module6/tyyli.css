@@ -61,7 +61,7 @@ header {
 
 nav {
     grid-area: nav;
-    background-color: #028090;
+    background-color: #028D93;
     padding: 10px;
 }
 
@@ -80,7 +80,7 @@ nav ul li a:hover {
 
 main {
     grid-area: main;
-    background-color: #02A295;
+    background-color: #02B398;
     padding: 10px; /* Lisää tilaa reunojen väliin */
 }
 
@@ -92,7 +92,7 @@ aside {
 
 footer {
     grid-area: footer;
-    background-color: #029193;
+    background-color: #02A295;
     padding: 5px;
 }
 
