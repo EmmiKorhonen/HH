@@ -1,0 +1,179 @@
+img		{ 
+    height: 200px;
+    float: left; /* YOU CAN FLOAT AN ELEMENT WITHIN A GRID AREA */
+    padding: 10px 10px 5px 10px;
+}
+
+body {
+    background-color: #BCEDD6; /* Muuttaa koko sivuston taustavärin */
+    width: 80%;
+    margin: auto auto; 
+    }
+    
+
+.mycontainer {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+    }
+    
+    
+.myiframe {
+    position: absolute;
+    top: 50%; /* Yläreuna keskelle */
+    left: 50%; /* Vasen reuna keskelle */
+    transform: translate(-50%, -50%); /* Siirrä elementti 50% vasemmalle ja ylös*/
+    width: 80%;
+    height: 80%;
+    border: none;
+    }
+
+/*Here are required positioning details*/
+
+.video-info {
+        position: relative;
+        top: -20px;
+    }
+
+.video-info p {
+    text-align: center;
+}
+
+.video-info a {
+    color: black;
+}
+
+.video-info a:hover {
+    background-color: #7DB291; /* Voit vaihtaa tämän haluamaksesi väriksi */
+}
+
+header, nav, main, aside, footer {
+    background-color: inherit;
+    border-radius: 10px;
+}
+
+header {
+    grid-area: header;
+    background-color: #02C39A;
+    padding: 10px;
+}
+
+nav {
+    grid-area: nav;
+    background-color: #028090;
+    padding: 10px;
+}
+
+nav ul li a {
+    margin-left: -35px; /* Siirtää linkkejä */
+    color: black;
+}
+
+.bolded {
+    font-weight: bold;
+  }
+
+nav ul li a:hover {
+    background-color: #7DB291;
+  }
+
+main {
+    grid-area: main;
+    background-color: #02A295;
+    padding: 10px; /* Lisää tilaa reunojen väliin */
+}
+
+aside {
+    grid-area: aside;
+    background-color: #79DBAC;
+    padding: 10px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #029193;
+    padding: 5px;
+}
+
+footer p {
+    font-size: 18px; /* Muuta fonttikokoa tarvittaessa */
+    padding-left: 5px;
+}
+
+footer h2 {
+    padding-left: 10px;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        'header header header header header aside'
+        'nav nav main main main aside'
+        'nav nav main main main aside'
+        'nav nav main main main aside'
+        'footer footer footer footer footer footer';
+    grid-gap: .5em;
+    padding: .5em;
+    max-width: 62em; /* GIVE CONTAINER A WIDTH AND MARGINS IF YOU DO NOT WANT FULL SCREEN */
+    margin: auto;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+
+/*FIRST BREAK POINT === tablet */
+@media only screen and (max-width : 900px) {
+    body {
+        width: 95%;
+    }
+
+
+.grid-container {
+        display: grid;
+        grid-template-areas:
+                                'header header header header header header'
+            'nav nav nav nav nav nav'
+            'main main main main aside aside'
+            'footer footer footer footer footer footer';
+        grid-gap: .5em;
+        padding: .5em;
+    }
+
+    /*Here I changed the break point a lttle bit*/
+nav ul li {
+        margin-right: 40px; /* Säädä tarvittaessa etäisyyttä */
+    }
+
+ul li {
+        display: inline-block;
+    }
+
+}
+
+
+
+/*SECOND BREAK POINT === mobile */
+@media only screen and (max-width : 600px) {
+
+
+    .grid-container {
+        display: grid;
+        grid-template-areas:
+            'nav nav nav nav nav nav'
+            'header header header header header header'
+            'main main main main main main'
+            'aside aside aside aside aside aside'
+            'footer footer footer footer footer footer';
+        grid-gap: .5em;
+        padding: .5em;
+    }
+
+    ul li {
+        display: inline-block;
+    }
+    
+}
