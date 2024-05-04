@@ -1,0 +1,492 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Kesäkalenteri</title> 
+
+    <style> 
+        body{ 
+            background-color: #7DB291; 
+        } 
+
+		h1 {
+    		text-align: center;
+		}
+
+		
+        .grid-container { 
+            display: grid; 
+            grid-template-columns: auto auto auto auto auto auto; 
+            gap: 10px; 
+            background-color: #24744E; 
+            padding: 10px; 
+            margin-top: 15%; 
+            margin-right: 10%; 
+            margin-left: 10%; 
+        } 
+
+        .grid-container > div { 
+            background-color: rgba(255, 255, 255, 0.8); 
+            text-align: center; 
+            padding: 20px 0; 
+            font-size: 30px; 
+        } 
+
+        .item1 { 
+            grid-row-start: 1; 
+            grid-row-end: 3; 
+			cursor: pointer; /* Kursorin asetus pointeriksi */
+        } 
+
+        .item2 { 
+            grid-row-start: 1; 
+            grid-row-end: 2;
+			cursor: pointer; /* Kursorin asetus pointeriksi */ 
+        } 
+
+        .item3 { 
+            grid-row-start: 1; 
+            grid-row-end: 4;
+			cursor: pointer; /* Kursorin asetus pointeriksi */ 
+        } 
+
+        .item4 { 
+            grid-row-start: 1; 
+            grid-row-end: 3;
+			cursor: pointer; /* Kursorin asetus pointeriksi */ 
+        } 
+
+		.item5 {
+			cursor: pointer; /* Kursorin asetus pointeriksi */
+		}
+
+		.item6 {
+			cursor: pointer; /* Kursorin asetus pointeriksi */
+		}
+
+		.item7 {
+			cursor: pointer; /* Kursorin asetus pointeriksi */
+		}
+
+		.item8 {
+			cursor: pointer; /* Kursorin asetus pointeriksi */
+		}
+
+		.item9 {
+			cursor: pointer; /* Kursorin asetus pointeriksi */
+		}
+
+        .item10 { 
+            grid-column-start: 1; 
+            grid-column-end: 3;
+			cursor: pointer; /* Kursorin asetus pointeriksi */ 
+        } 
+
+		.item11 {
+			cursor: pointer; /* Kursorin asetus pointeriksi */
+		}
+
+		.item12 {
+			cursor: pointer; /* Kursorin asetus pointeriksi */
+		}
+
+		.item13 {
+			cursor: pointer; /* Kursorin asetus pointeriksi */
+		}
+
+        /* Lisätään tyyliä ikkunalle */
+		.popup {
+   			display: none;
+   			position: fixed;
+    		top: 50%;
+    		left: 50%;
+    		transform: translate(-50%, -50%);
+			width: 600px; /* Muutettu leveys */
+			height: 500px; /* Muutettu korkeus */
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 10px;
+			z-index: 999;
+			overflow: auto; /* Lisätty rullattavuus */
+		}
+
+
+        /* Lisätään tyyliä sulje-napille */
+		.close {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			cursor: pointer;
+			width: 30px; /* Uusi leveys */
+			height: 30px; /* Uusi korkeus */
+			font-size: 30px; /* Sama koko kuin kuvakkeelle */
+		}
+
+
+        /* Lisätään tyyliä kuvan sijoittamiseksi tekstiruudun sisälle */
+        .text-and-image {
+            text-align: left;
+        }
+
+        .text-and-image img {
+            max-width: 100%;
+            max-height: 200px; /* Muutettu kuvan maksimikorkeus */
+        }
+
+    </style> 
+</head> 
+<body> 
+
+<h1>Kesän ulkoilukohteet pääkaupunkiseudulla</h1>
+
+<div class="grid-container"> 
+    <div class="item1">1</div> 
+    <div class="item2">2</div> 
+    <div class="item3">3</div>   
+    <div class="item4">4</div> 
+    <div class="item5">5</div> 
+    <div class="item6">6</div> 
+    <div class="item7">7</div> 
+    <div class="item8">8</div>   
+    <div class="item9">9</div> 
+    <div class="item10">10</div> 
+    <div class="item11">11</div> 
+    <div class="item12">12</div> 
+    <div class="item13">13</div> 
+</div> 
+
+<!-- Lisätään popup-ikkuna -->
+<div id="popup" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <div class="text-and-image" id="popup-content">
+    </div>
+</div>
+
+<script>
+    // Funktio avaa popup-ikkunan 1
+    function openPopup1(content) {
+        let currentDate = new Date();
+        let openingDate = new Date('2024-05-20');
+        
+        if (currentDate >= openingDate) {
+            document.getElementById("popup-content").innerHTML = content;
+            document.getElementById("popup").style.display = "block";
+        } else {
+            alert("Luukku ei ole vielä avattavissa.");
+        }
+    }
+
+    // Funktio avaa popup-ikkunan 2
+    function openPopup2(content) {
+        let currentDate = new Date();
+        let openingDate = new Date('2024-05-27');
+        
+        if (currentDate >= openingDate) {
+            document.getElementById("popup-content").innerHTML = content;
+            document.getElementById("popup").style.display = "block";
+        } else {
+            alert("Luukku ei ole vielä avattavissa.");
+        }
+    }
+
+    // Funktio avaa popup-ikkunan 3
+    function openPopup3(content) {
+        let currentDate = new Date();
+        let openingDate = new Date('2024-06-03');
+        
+        if (currentDate >= openingDate) {
+            document.getElementById("popup-content").innerHTML = content;
+            document.getElementById("popup").style.display = "block";
+        } else {
+            alert("Luukku ei ole vielä avattavissa.");
+        }
+    }
+
+    // Funktio avaa popup-ikkunan 4
+    function openPopup4(content) {
+        let currentDate = new Date();
+        let openingDate = new Date('2024-06-10');
+        
+        if (currentDate >= openingDate) {
+            document.getElementById("popup-content").innerHTML = content;
+            document.getElementById("popup").style.display = "block";
+        } else {
+            alert("Luukku ei ole vielä avattavissa.");
+        }
+    }
+
+    // Funktio avaa popup-ikkunan 5
+    function openPopup5(content) {
+        let currentDate = new Date();
+        let openingDate = new Date('2024-06-17');
+        
+        if (currentDate >= openingDate) {
+            document.getElementById("popup-content").innerHTML = content;
+            document.getElementById("popup").style.display = "block";
+        } else {
+            alert("Luukku ei ole vielä avattavissa.");
+        }
+    }
+
+    // Funktio avaa popup-ikkunan 6
+    function openPopup6(content) {
+        let currentDate = new Date();
+        let openingDate = new Date('2024-06-24');
+        
+        if (currentDate >= openingDate) {
+            document.getElementById("popup-content").innerHTML = content;
+            document.getElementById("popup").style.display = "block";
+        } else {
+            alert("Luukku ei ole vielä avattavissa.");
+        }
+    }
+
+    // Funktio avaa popup-ikkunan 7
+    function openPopup7(content) {
+        let currentDate = new Date();
+        let openingDate = new Date('2024-07-01');
+        
+        if (currentDate >= openingDate) {
+            document.getElementById("popup-content").innerHTML = content;
+            document.getElementById("popup").style.display = "block";
+        } else {
+            alert("Luukku ei ole vielä avattavissa.");
+        }
+    }
+
+    // Funktio avaa popup-ikkunan 8
+    function openPopup8(content) {
+        let currentDate = new Date();
+        let openingDate = new Date('2024-07-08');
+        
+        if (currentDate >= openingDate) {
+            document.getElementById("popup-content").innerHTML = content;
+            document.getElementById("popup").style.display = "block";
+        } else {
+            alert("Luukku ei ole vielä avattavissa.");
+        }
+    }
+
+    // Funktio avaa popup-ikkunan 9
+    function openPopup9(content) {
+        let currentDate = new Date();
+        let openingDate = new Date('2024-07-15');
+        
+        if (currentDate >= openingDate) {
+            document.getElementById("popup-content").innerHTML = content;
+            document.getElementById("popup").style.display = "block";
+        } else {
+            alert("Luukku ei ole vielä avattavissa.");
+        }
+    }
+
+    // Funktio avaa popup-ikkunan 10
+    function openPopup10(content) {
+        let currentDate = new Date();
+        let openingDate = new Date('2024-07-22');
+        
+        if (currentDate >= openingDate) {
+            document.getElementById("popup-content").innerHTML = content;
+            document.getElementById("popup").style.display = "block";
+        } else {
+            alert("Luukku ei ole vielä avattavissa.");
+        }
+    }
+
+        // Funktio avaa popup-ikkunan 11
+        function openPopup11(content) {
+        let currentDate = new Date();
+        let openingDate = new Date('2024-07-29');
+        
+        if (currentDate >= openingDate) {
+            document.getElementById("popup-content").innerHTML = content;
+            document.getElementById("popup").style.display = "block";
+        } else {
+            alert("Luukku ei ole vielä avattavissa.");
+        }
+    }
+
+    // Funktio avaa popup-ikkunan 12
+    function openPopup12(content) {
+        let currentDate = new Date();
+        let openingDate = new Date('2024-08-05');
+        
+        if (currentDate >= openingDate) {
+            document.getElementById("popup-content").innerHTML = content;
+            document.getElementById("popup").style.display = "block";
+        } else {
+            alert("Luukku ei ole vielä avattavissa.");
+        }
+    }
+
+    // Funktio avaa popup-ikkunan 13
+    function openPopup13(content) {
+        let currentDate = new Date();
+        let openingDate = new Date('2024-08-12');
+        
+        if (currentDate >= openingDate) {
+            document.getElementById("popup-content").innerHTML = content;
+            document.getElementById("popup").style.display = "block";
+        } else {
+            alert("Luukku ei ole vielä avattavissa.");
+        }
+    }
+
+    // Funktio sulkee popup-ikkunan
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+    
+//item1
+document.querySelector('.item1').addEventListener('click', function() {
+    openPopup1(`
+        <h2>Vieraile Roihuvuoren kirsikkapuistossa</h2>
+        <p>Jos et ole vielä käynyt todistamassa Roihuvuoren kirsikkapuiden vaaleanpunaista hehkua, nyt on aika! Roihuvuoreen on istutettu yli 240 kirsikkapuuta vierailijoiden iloksi. Kirsikan kukat kukkivat vain lyhyen aikaa, joten tätä mahdollisuutta ei kannata jättää väliin.</p>
+        <!-- Kuva sijoitettu tekstiruudun sisälle -->
+        <img src="https://vihreatsylit.fi/hp/wp-content/uploads/2020/11/kirsikkapuisto-hanami.jpg" alt="Ihmisiä Roihuvuoren kirsikkapuistossa piknikillä">
+        <h2>Kartta</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.88153226737063!2d25.048278918969526!3d60.196418047060895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46920933f23f938f%3A0x69fb26a54f74a34f!2sRoihuvuoren%20kirsikkapuisto!5e0!3m2!1sfi!2sfi!4v1714819496514!5m2!1sfi!2sfi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    `);
+});
+
+
+
+	//item2
+    document.querySelector('.item2').addEventListener('click', function() {
+        openPopup2(`
+            <h2>Pyöräretki Kallahdenniemeen</h2>
+            <p>Nyt on korkea aika kaivaa pyörä varaston perukoilta ja suunnata kohti Vuosaarta! Tällä suojellulla harjulla reittisi käy pitkin korkeiden mäntyjen reunustamia teitä kauniissa merimaisemissa. Voit halutessasi pysähtyä uimaan tai poiketa paikallisessa ravintolassa lounaalla.</p>
+            <img src="https://stplattaprod.blob.core.windows.net/helfikuvaprod/styles/3_2_l_2x/azure/verkko_20230501_141838.jpg?itok=_RFSl_ar" alt="Kallioinen merimaisema Kallahdenniemellä">
+        	<h2>Kartta</h2>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4326.167768760704!2d25.139111969720897!3d60.188070691435236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46920e561291cef9%3A0x4f3f61451c458997!2sKallahdenniemi!5e0!3m2!1sfi!2sfi!4v1714821633521!5m2!1sfi!2sfi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+		);
+    });
+
+	//item3
+    document.querySelector('.item3').addEventListener('click', function() {
+        openPopup3(`
+            <h2>Tutustu Mustavuoren luoliin</h2>
+            <p>Suuntaa luonnon helmaan kohti historian havinaa! Mustavuoressa pääset tutustumaan maailmansodan aikaisiin luolalinnoituksiin. Alueelta löytyy myös vanhoja juoksuhautoja. Lähde siis tutustumaan kiinnostavaan palaseen Suomen historiaa. <br><br> <b>Huom!</b> Ota mukaasi vedenpitävät kengät, sillä joskus luolissa saattaa olla vettä.</p>
+            <img src="https://urbanex.ninja/wp-content/uploads/2014/06/urbanex-mustavuori-1500.jpg" alt="Kaksi ihmistä poistumassa luolasta">
+        	<h2>Kartta</h2>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.327865454543!2d25.137771056346214!3d60.23593563812453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46920f5daf05fac9%3A0xe50d6f24c560c131!2sMustavuoren%20linnoitusalue!5e0!3m2!1sfi!2sfi!4v1714822535028!5m2!1sfi!2sfi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+		);
+    });
+
+	//item4
+	document.querySelector('.item4').addEventListener('click', function() {
+        openPopup4(`
+            <h2>Piknik Tervasaaressa</h2>
+            <p>Kerää eväskorisi täyteen kesäisiä herkkuja ja suuntaa piknikille Tervasaaren! Tervasaarelta löytyy paljon tasaista nurmitilaa, joka suorastaan kutsuu lomailijoita eväsretkelle. Loistavan sijaintinsa ansiosta Tervasaaressa voi nauttia auringosta aamusta iltaan.</p>
+            <img src="https://www.rantapallo.fi/wp-content/uploads/2018/07/suomi-helsinki-tervasaari-ss.jpg" alt="Puistoalue Tervasaaressa">
+        	<h2>Kartta</h2>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1051.2115096822888!2d24.96808029603928!3d60.17373139298617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46920bdbd31d8c5d%3A0x3c39221311fc32f2!2sTervasaari!5e0!3m2!1sfi!2sfi!4v1714823073795!5m2!1sfi!2sfi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+		);
+    });
+
+	//item5
+	document.querySelector('.item5').addEventListener('click', function() {
+        openPopup5(`
+            <h2>Käyskentelyä Kaisaniemen kasvitieteellisessä puutarhassa</h2>
+            <p>Tutustu kasvien monimuotoisuuteen KaIsaniemen kasvitieteellisessä puutarhassa. Historiallinen ulkopuutarha tarjoaa vierailijoilleen kasvien kehityshistoriaa evoluutiopuutarhassa, tunteita ja tuoksuja aistipuutarhassa sekä mahdollisuuden arvostaa pientä ja kaunista sammal- ja jäkäläpuutarhassa.</p>
+            <img src="https://www.vastavalo.net/albums/userpics/18622/normal_110811_6c.jpg" alt="Kaisaniemen kasvitieteellinen ulkopuutarha">
+        	<h2>Kartta</h2>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1984.326477042084!2d24.94315947686865!3d60.175328243017915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46920bd2338fb1af%3A0x654123add3ebcf0!2sKaisaniemen%20kasvitieteellinen%20puutarha!5e0!3m2!1sfi!2sfi!4v1714823531918!5m2!1sfi!2sfi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+		);
+    });
+
+	//item6
+	document.querySelector('.item6').addEventListener('click', function() {
+        openPopup6(`
+            <h2>Uimaan Mustikkamaan uimarannalla</h2>
+            <p>Johan sitä on kaupunkia kierretty, joten on aika pulahtaa vilvoittelemaan Mustikkamaan uimarannalla! Mustikkamaan ranta on yksi Helsingin kauniimpia kallioisen maisemineen. Ranta on hyvin varusteltu ja paikalta löytyvätkin sekä pukukopit että suihku. Mikäli haluat hien pintaan niin lähistöltä löytyy myös ulkokuntosali, jossa voit tehdä päivän treenin ennen virkistäytymistä.</p>
+            <img src="https://www.hel.fi/kuva-assets/sites/default/files/styles/3_2_l_2x/public/externals/4793e19cfe27111766e4294225a0034b.jpg?itok=DSEMuQdt" alt="Mustikkamaan uimaranta">
+        	<h2>Kartta</h2>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1984.1175735994518!2d24.990746376868955!3d60.17878614273877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4692095fd2af8475%3A0x22bead4adc311f22!2sMustikkamaan%20uimaranta!5e0!3m2!1sfi!2sfi!4v1714823845134!5m2!1sfi!2sfi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+		);
+    });
+
+	//item7
+	document.querySelector('.item7').addEventListener('click', function() {
+        openPopup7(`
+            <h2>Vieraile Haltialan kotieläintilalla</h2>
+            <p>Kaipaatko eläimellistä menoa? Silloin on aika vierailla Haltialan kotieläintilalla! Tilan asukkaisiin kuuluvat muun muassa lehmät, possut, lampaat ja kanat. Käy siis tervehtimässä pihalla ulkoilevia eläimiä ja saatat hyvällä tuurilla nähdä keväällä syntyneet karitsat. Alueella voi myös poimia kukkia, joten voit halutessasi harjoitella seppeleen punomista!</p>
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjCxmdXnrgVASqKsWjpfZ7_6wfk24bsgM3FDsfq_1bCvFJpblCA_ZQNUmtonSpBsb92rNZMYxmIQYoyWlPbGsEBbpmxuJHviah2Ju-ykV0oCSwHcHtJFWlPPQYf7Z3vdoCk2vXUJjE8Jw/s1600/haltialan_tila_1767.jpg" alt="Lapmapita ja lehmiä Haltialan tilalla">
+        	<h2>Kartta</h2>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1978.259008340917!2d24.951185776875423!3d60.2757121349114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468df7fdf3c7dbef%3A0x96d6d6765f772ce9!2sHaltialan%20kotiel%C3%A4intila!5e0!3m2!1sfi!2sfi!4v1714833287308!5m2!1sfi!2sfi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+		);
+    });
+
+	//item8
+	document.querySelector('.item8').addEventListener('click', function() {
+        openPopup8(`
+            <h2>Päivä Suomenlinnassa</h2>
+            <p>Mitä olisi kesä ilman kulttuuria? Hyppää lautalle ja suuntaa kohti Unescon maailmanperintökohdetta. Varaa rutkasti aikaa ja tutustu rauhassa linnan tunneleihin ja ilmaisiin gallerioihin. Pakkaa mukaan omat eväät, niin voit nautiskella lounaasi linnan muurien läheisyydessä merta katsellen.</p>
+            <img src="https://www.rantapallo.fi/wp-content/uploads/2015/04/Suomenlinna-Kuninkaanportti-Helsinki-Jussi-Hellsten-Visit-Finland.jpg" alt="Suomenlinnan muurit veden äärellä">
+        	<h2>Kartta</h2>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15888.636645314613!2d24.958078876600624!3d60.146305064136364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46920b8e716456fb%3A0xa00b553b99239b0!2sSuomenlinna%2C%20Helsinki!5e0!3m2!1sfi!2sfi!4v1714833755951!5m2!1sfi!2sfi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+		);
+    });
+
+	//item9
+	document.querySelector('.item9').addEventListener('click', function() {
+        openPopup9(`
+            <h2>Opi uutta Maunulan luontopolulla</h2>
+            <p>Tutustu luonnon kiertokulkuun ja opi uutta Manulan luontopolulla! Tällä reitillä pääset tutustumaan metsiin, pähkinälehtoihin, purolaaksoihin ja kulttuurimaisemiin. Tämäm 3,3km kiierroksen varrelta löydät opastetauluja, jotka kertovat sinulle mielenkiintosita tietoa olinpaikkasi luonnosta.</p>
+            <img src="https://retkipaikka.fi/wp-content/uploads/2022/06/maunula14.jpg" alt="Vehreä metsäpolku">
+        	<h2>Kartta</h2>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7925.385662848962!2d24.917061486626604!3d60.22464476376473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468da595cbff74e5%3A0xba09edb5a4c83709!2sKeskuspuisto!5e0!3m2!1sfi!2sfi!4v1714834200295!5m2!1sfi!2sfi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+		);
+    });
+
+	//item10
+	document.querySelector('.item10').addEventListener('click', function() {
+        openPopup10(`
+            <h2>Rantalentopalloa Hietaniemen rannalla</h2>
+            <p>Nauti aurinkoisesta kesäpäivästä rantalentopallo merkeissä! Kerää itsellesi kaveriporukka ja suuntaa kohti Hietaniemen uimarantaa. Rantalentopallossa yhdistyvät treeni, hauskanpito sekä esteettinen rusketus. Kun turnaus on saatu päätökseen,  voitte ottaa viimeisen kilpajuoksun veteen.</p>
+            <img src="https://sndp.mediadelivery.fi/img/468/ec58a2e5aacbd1eb2382d5351c76d0d2.jpg" alt="Ihmiset pelaamassa rantalentopalloa">
+        	<h2>Kartta</h2>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1621.1912526794347!2d24.903955576202677!3d60.1736993157977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46920a3945a9850b%3A0x3886c288b54ffa1f!2sHietaranta!5e0!3m2!1sfi!2sfi!4v1714834627924!5m2!1sfi!2sfi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+		);
+    });
+
+	//item11
+	document.querySelector('.item11').addEventListener('click', function() {
+        openPopup11(`
+            <h2>Luonnon rauhaa Lammassaarella ja Kuusiluodolla</h2>
+            <p>Vaihda liikenteen hälinä lintujen lauluun Vanhankaupunginselällä! Patikoi Lammassaarella ja kapua matkan aikana lintutorniin bongaamaan lintujen keitaaksikin kutsutun alueen lintulajeja. Jatka retkeäsi pitkospuita pitkin Kuusiluotoon asti, jossa saatat tavata saaren kesäasukkaat. Saarella nimittäin asustaa pieni lammaslauma.</p>
+            <img src="https://meriharakka.net/wp-content/uploads/2020/10/lammasluoto-050341.jpg" alt="Lammassaaren leveät pitkospuut">
+        	<h2>Kartta</h2>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4449.626432186282!2d24.986137763020977!3d60.212452505797884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46920908eb3f3df5%3A0xfae63782cf2b800!2sLammassaaren%20pitkospuut!5e0!3m2!1sfi!2sfi!4v1714836133104!5m2!1sfi!2sfi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+		);
+    });
+
+	//item12
+	document.querySelector('.item12').addEventListener('click', function() {
+        openPopup12(`
+            <h2>Heittäydy tanssin pyörteisiin kaupunkitansseissa</h2>
+            <p>Nappaa puoliso tai kaveri mukaan ja lähde opettelemaan erilaisia paritansseja ympäri Helsinkiä! Tanssiteatteri Tsuumi järjestää jälleen ilmaista paritanssiopetusta läpi kesän eri kohteissa. Tällä viikolla tarjonnassa olisivat hidas valssi Kannelmäessä ja Tapiolassa, bachata Malmilla ja Kauppatorilla, tango Malminkartanolla ja Vuosaaressa, salsaa Teurastamolla sekä cha cha Itäkeskuksella.<br><br><a href="https://www.tsuumi.com/kaupunkitanssit/kaupunkitanssit-paikkakohtainen-opetusohjelma/">Tutustu aikatauluihin</a></p>
+            <img src="https://scontent-hel3-1.xx.fbcdn.net/v/t39.30808-6/392766551_845422517590563_841047357957041170_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=-VHnkmVMzSYQ7kNvgGCZe1J&_nc_ht=scontent-hel3-1.xx&oh=00_AfD8O8tyQVnhSejeyDtdC7OYJWO0n7JTo0dXCxDQ0fQVyQ&oe=663C41CF" alt="Tanssipari">
+        	<h2>Kartta</h2>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253636.9948761047!2d24.818141462392436!3d60.221458082293346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46920bc796210691%3A0xcd4ebd843be2f763!2sHelsinki!5e0!3m2!1sfi!2sfi!4v1714838994390!5m2!1sfi!2sfi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+		);
+    });
+
+	//item13
+	document.querySelector('.item13').addEventListener('click', function() {
+        openPopup13(`
+            <h2>Tutustu villiin saaristoluontoon Vallisaaressa!</h2>
+            <p>Hyppää lautan kyytiin ja suuntaa kohti Vallisaarta! Vallisaari on monipuolinen kohde, jossa pääset kokemaan runsaat kukkakedot, ihastuttavat lammet sekä historialliset rakennelmat. Ota siis mukaan hyvät kävely kengät ja vietä päiväsi tässä loisto kohteessa.</p>
+            <img src="https://www.aarresaaret.fi/wp-content/uploads/2013/05/JNi_2012_06_08_999_229_kiikari_jni.jpg" alt="Saaristokasvillisuutta ja purjevene">
+        	<h2>Kartta</h2>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7946.53769321605!2d24.995980790038367!3d60.13711771296728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46920d7fcbef22e7%3A0x5f341c9dbcf61c1f!2sVallisaari!5e0!3m2!1sfi!2sfi!4v1714840281590!5m2!1sfi!2sfi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+		);
+    });
+
+
+</script>
+
+</body> 
+</html>
